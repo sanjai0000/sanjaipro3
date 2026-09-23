@@ -1,19 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Basic CSS Selectors</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative CSS Selectors Demo</title>
 
-    <style>
-        /* Write your CSS here */
+<style>
 
-    </style>
+/* Universal Selector */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
 
+/* Body */
+body{
+    background:linear-gradient(135deg,#6dd5fa,#2980b9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* Container */
+.container{
+    width:550px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    animation:fadeIn 1s ease-in-out;
+}
+
+/* Element Selector */
+h1{
+    color:navy;
+    margin-bottom:15px;
+}
+
+/* ID Selector */
+#heading{
+    color:#ff0066;
+    text-shadow:2px 2px 5px pink;
+}
+
+/* Grouping Selector */
+h2,p{
+    margin:15px 0;
+}
+
+/* Class Selector */
+.info{
+    color:green;
+    font-size:18px;
+    background:#eaffea;
+    padding:12px;
+    border-left:5px solid green;
+    border-radius:10px;
+}
+
+/* Card */
+.card{
+    background:#f8f9fa;
+    padding:15px;
+    border-radius:12px;
+    margin-top:15px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Animated Text Box */
+.input-box{
+    position:relative;
+    width:100%;
+    margin-top:25px;
+}
+
+.input-box input{
+    width:100%;
+    padding:14px;
+    font-size:16px;
+    border:2px solid #ccc;
+    border-radius:10px;
+    outline:none;
+    transition:0.4s;
+}
+
+.input-box label{
+    position:absolute;
+    left:15px;
+    top:14px;
+    color:#777;
+    background:white;
+    padding:0 5px;
+    transition:0.4s;
+    pointer-events:none;
+}
+
+.input-box input:focus,
+.input-box input:valid{
+    border-color:#ff5722;
+    box-shadow:0 0 12px rgba(255,87,34,0.5);
+}
+
+.input-box input:focus + label,
+.input-box input:valid + label{
+    top:-10px;
+    left:12px;
+    color:#ff5722;
+    font-size:13px;
+    font-weight:bold;
+}
+
+/* Button */
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    background:#ff5722;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+button:hover{
+    background:#e64a19;
+    transform:translateY(-3px);
+}
+
+/* Animation */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-     /* Write your html code to structure your web page here */
+<div class="container">
+
+<h1 id="heading">?? CSS Selectors Demo</h1>
+
+<h2>Welcome to the World of CSS</h2>
+
+<p class="info">
+? This paragraph demonstrates the <strong>Class Selector (.info)</strong>.
+</p>
+
+<div class="card">
+    <p>
+    ? This paragraph demonstrates the <strong>Grouping Selector (h2, p)</strong>.
+    </p>
+</div>
+
+<!-- Animated Text Box -->
+<div class="input-box">
+    <input type="text" id="username" required>
+    <label for="username">Enter Your Name</label>
+</div>
+
+<button>Learn More</button>
+
+</div>
 
 </body>
 </html>
